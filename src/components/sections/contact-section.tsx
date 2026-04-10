@@ -7,6 +7,7 @@ import { Card } from "@/components/ui/card";
 import { ContactForm } from "@/components/forms/contact-form";
 import { Section } from "@/components/ui/section";
 import { SectionViewTracker } from "@/components/analytics/section-view-tracker";
+import { cn } from "@/lib/utils";
 
 function LinkedInIcon(props: ComponentProps<"svg">) {
   return (
@@ -70,6 +71,7 @@ export function ContactSection() {
           <div className="space-y-3">
             {contactItems.map((item) => {
               const Icon = item.icon;
+              const isLinkedIn = item.label === "LinkedIn";
 
               return (
                 <TrackableLink
@@ -78,14 +80,25 @@ export function ContactSection() {
                   eventType="cta_click"
                   sectionKey="contact"
                   metadataJson={{ label: item.label, value: item.value }}
-                  className="flex min-w-0 items-start gap-3 rounded-[24px] border border-line/70 bg-surface p-4 transition-colors hover:border-accent/30"
+                  className={cn(
+                    "grid min-w-0 grid-cols-[auto_minmax(0,1fr)] items-start gap-x-3 rounded-[24px] border border-line/70 bg-surface transition-colors hover:border-accent/30",
+                    isLinkedIn ? "p-3.5" : "p-4",
+                  )}
                   target={item.external ? "_blank" : undefined}
                   rel={item.external ? "noreferrer" : undefined}
                 >
-                  <Icon size={18} className="mt-1 shrink-0 text-accent" />
-                  <div className="min-w-0 flex-1 space-y-1">
+                  <Icon
+                    size={isLinkedIn ? 16 : 18}
+                    className={cn("mt-1 shrink-0 text-accent", isLinkedIn && "mt-0.5")}
+                  />
+                  <div className={cn("min-w-0 overflow-hidden", isLinkedIn ? "space-y-0.5" : "space-y-1")}>
                     <p className="text-meta">{item.label}</p>
-                    <p className="max-w-full text-sm leading-6 text-muted [overflow-wrap:anywhere]">
+                    <p
+                      className={cn(
+                        "max-w-full text-muted",
+                        isLinkedIn ? "break-words text-[0.82rem] leading-5" : "text-sm leading-6",
+                      )}
+                    >
                       {item.value}
                     </p>
                   </div>
