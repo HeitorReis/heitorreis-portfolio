@@ -18,11 +18,11 @@ const ibmPlexMono = IBM_Plex_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(env.publicSiteUrl || "http://localhost:3000"),
   title: {
-    default: "Heitor | Computer Engineer",
+    default: "Heitor | Computer Engineering Student",
     template: "%s | Heitor",
   },
   description:
-    "Portfolio of Heitor, a computer engineer and Computer Engineering student working across AI, systems, research, and healthtech.",
+    "Portfolio of Heitor, a Computer Engineering student working across AI, systems, research, and healthtech.",
   robots: env.siteIndexingEnabled
     ? {
         index: true,

@@ -11,7 +11,7 @@ export function SiteHeader() {
         <Link href="/" className="flex flex-col">
           <span className="text-sm font-semibold tracking-[-0.02em]">Heitor</span>
           <span className="text-[0.72rem] uppercase tracking-[0.14em] text-muted">
-            Computer Engineer
+            Computer Engineering Student
           </span>
         </Link>
 

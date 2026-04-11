@@ -10,7 +10,7 @@ export function SiteFooter() {
         <div className="space-y-3">
           <p className="text-sm font-semibold">Heitor</p>
           <p className="max-w-2xl text-sm leading-7 text-white/70">
-            Computer Engineer focused on AI, systems, research, and healthtech.
+            Computer Engineering student focused on AI, systems, research, and healthtech.
           </p>
           <p className="max-w-2xl text-sm leading-7 text-white/55">{privacySummary}</p>
         </div>
