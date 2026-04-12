@@ -7,4 +7,5 @@ tsconfig.tsbuildinfo
 .env
 .env.local
 .env.*.local
-
+supabase/.temp/*
+supabase
