@@ -1,9 +1,9 @@
+import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
 import { Card } from "@/components/ui/card";
 import { MediaFrame } from "@/components/ui/media-frame";
 import { Tag } from "@/components/ui/tag";
-import { TrackableLink } from "@/components/analytics/trackable-link";
 
 interface FeaturedWorkCardProps {
   title: string;
@@ -38,15 +38,12 @@ export function FeaturedWorkCard({
             ))}
           </div>
         ) : null}
-        <TrackableLink
+        <Link
           href={href}
-          eventType="featured_click"
-          sectionKey="featured-work"
-          metadataJson={{ title }}
           className="inline-flex items-center gap-2 text-sm font-medium text-accent"
         >
           View details <ArrowUpRight size={16} />
-        </TrackableLink>
+        </Link>
       </div>
     </Card>
   );

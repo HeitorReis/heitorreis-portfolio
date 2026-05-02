@@ -2,7 +2,6 @@ import type { Achievement } from "@/types/domain";
 import { AchievementCard } from "@/components/cards/achievement-card";
 import { EmptyState } from "@/components/ui/empty-state";
 import { Section } from "@/components/ui/section";
-import { SectionViewTracker } from "@/components/analytics/section-view-tracker";
 
 export function AchievementsSection({ achievements }: { achievements: Achievement[] }) {
   return (
@@ -13,7 +12,6 @@ export function AchievementsSection({ achievements }: { achievements: Achievemen
       intro="Selected recognition that adds external signal to the work without taking attention away from it."
       className="relative"
     >
-      <SectionViewTracker sectionKey="achievements" />
       {achievements.length ? (
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {achievements.map((achievement) => (

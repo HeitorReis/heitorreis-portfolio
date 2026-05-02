@@ -26,9 +26,6 @@ export function SiteFooter() {
           <Link href="/privacy" className="block hover:text-white">
             Privacy
           </Link>
-          <Link href="/admin/login" className="sr-only">
-            Admin
-          </Link>
         </div>
       </Container>
     </footer>

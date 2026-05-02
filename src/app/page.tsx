@@ -1,4 +1,3 @@
-import { PageViewTracker } from "@/components/analytics/page-view-tracker";
 import { SiteShell } from "@/components/layout/site-shell";
 import { AchievementsSection } from "@/components/sections/achievements-section";
 import { ContactSection } from "@/components/sections/contact-section";
@@ -17,7 +16,6 @@ export default async function Home() {
 
   return (
     <SiteShell>
-      <PageViewTracker />
       <HeroSection settings={payload.settings} />
       <FeaturedWorkSection
         experiences={payload.featuredExperiences}

@@ -17,14 +17,9 @@
     "start": "next start",
     "lint": "eslint .",
     "doctor:runtime": "node ./scripts/verify-runtime.mjs",
-    "typecheck": "tsc --noEmit",
-    "db:login": "npx supabase login",
-    "db:link": "npx supabase link --project-ref dqztdyxkmaghsarwrncj",
-    "db:push": "npx supabase db push"
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@supabase/ssr": "^0.10.2",
-    "@supabase/supabase-js": "^2.103.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^1.8.0",
@@ -32,8 +27,7 @@
     "next-themes": "^0.4.6",
     "react": "19.2.4",
     "react-dom": "19.2.4",
-    "tailwind-merge": "^3.5.0",
-    "zod": "^4.3.6"
+    "tailwind-merge": "^3.5.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

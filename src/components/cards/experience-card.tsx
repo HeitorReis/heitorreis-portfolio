@@ -1,6 +1,6 @@
+import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
-import { TrackableLink } from "@/components/analytics/trackable-link";
 import { Card } from "@/components/ui/card";
 import { Tag } from "@/components/ui/tag";
 
@@ -60,15 +60,12 @@ export function ExperienceCard({
         </div>
       ) : null}
 
-      <TrackableLink
+      <Link
         href={href}
-        eventType="cta_click"
-        sectionKey="experience"
-        metadataJson={{ title }}
         className="inline-flex items-center gap-2 text-sm font-medium text-accent"
       >
         View details <ArrowUpRight size={16} />
-      </TrackableLink>
+      </Link>
     </Card>
   );
 }

@@ -1,8 +1,8 @@
+import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
 import { Card } from "@/components/ui/card";
 import { Tag } from "@/components/ui/tag";
-import { TrackableLink } from "@/components/analytics/trackable-link";
 import { formatProjectCategory } from "@/lib/utils";
 
 type ProjectCardBadgeTone = "neutral" | "accent" | "success" | "warning" | "danger";
@@ -62,15 +62,12 @@ export function ProjectCard({
         </div>
       ) : null}
 
-      <TrackableLink
+      <Link
         href={href}
-        eventType="cta_click"
-        sectionKey="projects"
-        metadataJson={{ title }}
         className="inline-flex items-center gap-2 text-sm font-medium text-accent"
       >
         {ctaLabel} <ArrowUpRight size={16} />
-      </TrackableLink>
+      </Link>
     </Card>
   );
 }

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-import { PageViewTracker } from "@/components/analytics/page-view-tracker";
 import { DetailPageTemplate } from "@/components/sections/detail-page-template";
 import { getProjectBySlug, getPublicDetailSlugs } from "@/lib/repositories/public/content";
 import { formatProjectCategory } from "@/lib/utils";
@@ -86,16 +85,13 @@ export default async function ProjectDetailPage({
   ];
 
   return (
-    <>
-      <PageViewTracker />
-      <DetailPageTemplate
+    <DetailPageTemplate
         eyebrow="Project"
         title={project.title}
         summary={project.summary}
         imagePath={project.imagePath}
         meta={[formatProjectCategory(project.category)]}
         sections={sections}
-      />
-    </>
+    />
   );
 }

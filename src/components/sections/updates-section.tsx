@@ -4,7 +4,6 @@ import type { Post } from "@/types/domain";
 import { PostCard } from "@/components/cards/post-card";
 import { EmptyState } from "@/components/ui/empty-state";
 import { Section } from "@/components/ui/section";
-import { SectionViewTracker } from "@/components/analytics/section-view-tracker";
 
 export function UpdatesSection({ posts }: { posts: Post[] }) {
   return (
@@ -23,7 +22,6 @@ export function UpdatesSection({ posts }: { posts: Post[] }) {
       }
       className="relative"
     >
-      <SectionViewTracker sectionKey="updates" />
       {posts.length ? (
         <div className="grid gap-6 md:grid-cols-3">
           {posts.map((post) => (

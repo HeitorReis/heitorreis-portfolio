@@ -1,4 +1,3 @@
-import { PageViewTracker } from "@/components/analytics/page-view-tracker";
 import { PostCard } from "@/components/cards/post-card";
 import { EmptyState } from "@/components/ui/empty-state";
 import { Section } from "@/components/ui/section";
@@ -12,9 +11,7 @@ export default async function UpdatesPage() {
   const posts = await getPublishedPosts();
 
   return (
-    <>
-      <PageViewTracker />
-      <Section
+    <Section
         eyebrow="Updates"
         title="Short notes on recognition and progress."
         intro="A small public feed for milestones, recognition, and other updates worth keeping visible."
@@ -37,7 +34,6 @@ export default async function UpdatesPage() {
             body="This page will fill up when there is something short and useful to share."
           />
         )}
-      </Section>
-    </>
+    </Section>
   );
 }

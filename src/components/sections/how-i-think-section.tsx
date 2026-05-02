@@ -1,5 +1,4 @@
 import { Section } from "@/components/ui/section";
-import { SectionViewTracker } from "@/components/analytics/section-view-tracker";
 
 export function HowIThinkSection() {
   return (
@@ -10,7 +9,6 @@ export function HowIThinkSection() {
       intro="Heitor is especially interested in problems that sit between technical depth and real-world use, whether in software, systems, AI, or digital health."
       className="relative"
     >
-      <SectionViewTracker sectionKey="how-i-think" />
       <div className="surface-card reading-width rounded-[32px] border border-line/70 p-8 text-base leading-8 text-muted">
         What stands out in his profile is not only technical range, but the ability to connect
         different layers of a problem clearly, from low-level systems to applied tools shaped by

@@ -1,6 +1,5 @@
 import { ProjectCard } from "@/components/cards/project-card";
 import { Section } from "@/components/ui/section";
-import { SectionViewTracker } from "@/components/analytics/section-view-tracker";
 
 const githubProjects = [
   {
@@ -44,7 +43,6 @@ const githubProjects = [
 export function ProjectsSection() {
   return (
     <Section id="projects" className="relative">
-      <SectionViewTracker sectionKey="projects" />
       <div className="mb-10 max-w-3xl space-y-3">
         <h2 className="text-3xl font-semibold tracking-[-0.03em]">GitHub Projects</h2>
         <p className="reading-width text-lg leading-8 text-muted">

@@ -1,4 +1,3 @@
-import { PageViewTracker } from "@/components/analytics/page-view-tracker";
 import { ContactSection } from "@/components/sections/contact-section";
 
 export const metadata = {
@@ -6,11 +5,5 @@ export const metadata = {
 };
 
 export default function ContactPage() {
-  return (
-    <>
-      <PageViewTracker />
-      <ContactSection />
-    </>
-  );
+  return <ContactSection />;
 }
-

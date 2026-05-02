@@ -2,7 +2,6 @@ import type { Experience, Project } from "@/types/domain";
 import { FeaturedWorkCard } from "@/components/cards/featured-work-card";
 import { EmptyState } from "@/components/ui/empty-state";
 import { Section } from "@/components/ui/section";
-import { SectionViewTracker } from "@/components/analytics/section-view-tracker";
 import { selectedWorkEntries } from "@/lib/constants/portfolio-content";
 
 interface FeaturedWorkSectionProps {
@@ -52,7 +51,6 @@ export function FeaturedWorkSection({
       intro="A curated view of the projects and experiences that best represent Heitor’s range across business systems, AI, software, and low-level engineering."
       className="relative"
     >
-      <SectionViewTracker sectionKey="featured-work" />
       {items.length ? (
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
           {items.map((item) => (

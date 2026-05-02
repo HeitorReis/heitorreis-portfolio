@@ -15,7 +15,6 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: "/admin",
     },
     sitemap: `${env.publicSiteUrl || "http://localhost:3000"}/sitemap.xml`,
   };

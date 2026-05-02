@@ -4,7 +4,6 @@ import type { Experience } from "@/types/domain";
 import { ExperienceCard } from "@/components/cards/experience-card";
 import { EmptyState } from "@/components/ui/empty-state";
 import { Section } from "@/components/ui/section";
-import { SectionViewTracker } from "@/components/analytics/section-view-tracker";
 import { selectedWorkEntries } from "@/lib/constants/portfolio-content";
 
 export function ExperienceSection({ experiences }: { experiences: Experience[] }) {
@@ -52,7 +51,6 @@ export function ExperienceSection({ experiences }: { experiences: Experience[] }
       }
       className="relative"
     >
-      <SectionViewTracker sectionKey="experience" />
       {orderedExperiences.length ? (
         <div className="grid gap-6">
           {orderedExperiences.map((experience) => {

@@ -1,13 +1,12 @@
+import Link from "next/link";
+
 import type { HomepageSettings } from "@/types/domain";
 import { MediaFrame } from "@/components/ui/media-frame";
 import { Container } from "@/components/ui/container";
-import { TrackableLink } from "@/components/analytics/trackable-link";
-import { SectionViewTracker } from "@/components/analytics/section-view-tracker";
 
 export function HeroSection({ settings }: { settings: HomepageSettings }) {
   return (
     <section className="relative overflow-hidden border-b border-line/60 py-16 md:py-24">
-      <SectionViewTracker sectionKey="hero" />
       <Container className="grid items-center gap-10 lg:grid-cols-[1.2fr_0.8fr]">
         <div className="space-y-8">
           <div className="space-y-5">
@@ -19,24 +18,18 @@ export function HeroSection({ settings }: { settings: HomepageSettings }) {
           </div>
 
           <div className="flex flex-col gap-3 sm:flex-row">
-            <TrackableLink
+            <Link
               href="#featured-work"
-              eventType="cta_click"
-              sectionKey="hero"
-              metadataJson={{ label: "See Selected Work" }}
               className="inline-flex h-12 items-center justify-center rounded-full bg-accent px-6 text-sm font-medium text-accent-fg shadow-[var(--shadow-sm)]"
             >
               See Selected Work
-            </TrackableLink>
-            <TrackableLink
+            </Link>
+            <Link
               href="/contact"
-              eventType="cta_click"
-              sectionKey="hero"
-              metadataJson={{ label: "Contact" }}
               className="inline-flex h-12 items-center justify-center rounded-full border border-line bg-surface px-6 text-sm font-medium text-fg"
             >
               Contact
-            </TrackableLink>
+            </Link>
           </div>
 
           <p className="max-w-2xl text-sm leading-7 text-muted">

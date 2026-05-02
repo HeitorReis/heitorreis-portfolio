@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-import { PageViewTracker } from "@/components/analytics/page-view-tracker";
 import { DetailPageTemplate } from "@/components/sections/detail-page-template";
 import { getExperienceBySlug, getPublicDetailSlugs } from "@/lib/repositories/public/content";
 
@@ -84,16 +83,13 @@ export default async function ExperienceDetailPage({
         ];
 
   return (
-    <>
-      <PageViewTracker />
-      <DetailPageTemplate
+    <DetailPageTemplate
         eyebrow={experience.organization}
         title={experience.title}
         summary={experience.summary}
         imagePath={experience.imagePath}
         meta={[experience.timeframeLabel].filter((value): value is string => Boolean(value))}
         sections={sections}
-      />
-    </>
+    />
   );
 }

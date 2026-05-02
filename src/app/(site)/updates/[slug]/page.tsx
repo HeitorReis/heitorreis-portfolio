@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-import { PageViewTracker } from "@/components/analytics/page-view-tracker";
 import { DetailPageTemplate } from "@/components/sections/detail-page-template";
 import { getPostBySlug, getPublicDetailSlugs } from "@/lib/repositories/public/content";
 import { formatPostCategory } from "@/lib/utils";
@@ -44,9 +43,7 @@ export default async function UpdateDetailPage({
   }
 
   return (
-    <>
-      <PageViewTracker />
-      <DetailPageTemplate
+    <DetailPageTemplate
         eyebrow="Update"
         title={post.title}
         summary={post.excerpt}
@@ -58,7 +55,6 @@ export default async function UpdateDetailPage({
             body: post.content,
           },
         ]}
-      />
-    </>
+    />
   );
 }

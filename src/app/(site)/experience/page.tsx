@@ -1,4 +1,3 @@
-import { PageViewTracker } from "@/components/analytics/page-view-tracker";
 import { DetailPageTemplate } from "@/components/sections/detail-page-template";
 import { getExperienceSummaryData } from "@/lib/repositories/public/content";
 
@@ -10,9 +9,7 @@ export default async function ExperienceSummaryPage() {
   const { experiences, projects, achievements } = await getExperienceSummaryData();
 
   return (
-    <>
-      <PageViewTracker />
-      <DetailPageTemplate
+    <DetailPageTemplate
         eyebrow="Experience summary"
         title="Experience, projects, and recognition in one place."
         summary="This page gives the quickest full scan of Heitor's range. Open individual detail pages wherever more depth is useful."
@@ -42,7 +39,6 @@ export default async function ExperienceSummaryPage() {
             list: achievements.map((entry) => entry.title),
           },
         ]}
-      />
-    </>
+    />
   );
 }

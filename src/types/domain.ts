@@ -2,14 +2,6 @@ export type UUID = string;
 export type ISODateString = string;
 export type ISODateTimeString = string;
 
-export type JsonValue =
-  | string
-  | number
-  | boolean
-  | null
-  | JsonValue[]
-  | { [key: string]: JsonValue };
-
 export type SectionKey =
   | "hero"
   | "featured-work"
@@ -41,26 +33,6 @@ export type PostCategory =
   | "achievement-news"
   | "learning"
   | "milestone";
-
-export type MediaType = "image" | "video" | "document";
-
-export type RelatedEntityType =
-  | "experience"
-  | "project"
-  | "achievement"
-  | "post"
-  | "homepage"
-  | "personal";
-
-export type AdminRole = "admin";
-
-export type AnalyticsEventType =
-  | "page_view"
-  | "section_view"
-  | "featured_click"
-  | "cta_click"
-  | "post_click"
-  | "contact_submit";
 
 export interface DetailSection {
   key:
@@ -153,20 +125,6 @@ export interface Post {
   updatedAt: ISODateTimeString;
 }
 
-export interface MediaAsset {
-  id: UUID;
-  fileName: string;
-  filePath: string;
-  altText: string | null;
-  mediaType: MediaType;
-  bucketId: string;
-  isPublic: boolean;
-  relatedEntityType: RelatedEntityType | null;
-  relatedEntityId: UUID | null;
-  createdAt: ISODateTimeString;
-  updatedAt: ISODateTimeString;
-}
-
 export interface HomepageSettings {
   id: number;
   headline: string;
@@ -174,38 +132,6 @@ export interface HomepageSettings {
   heroImagePath: string | null;
   showPhotoInHero: boolean;
   updatedAt: ISODateTimeString;
-}
-
-export interface VisitorInterest {
-  id: UUID;
-  fullName: string;
-  email: string | null;
-  linkedin: string | null;
-  company: string | null;
-  role: string | null;
-  message: string | null;
-  consentTextVersion: string;
-  consentGiven: boolean;
-  submittedAt: ISODateTimeString;
-  createdAt: ISODateTimeString;
-}
-
-export interface AnalyticsEvent {
-  id: UUID;
-  sessionId: string;
-  eventType: AnalyticsEventType;
-  pagePath: string;
-  sectionKey: SectionKey | null;
-  metadataJson: JsonValue | null;
-  occurredAt: ISODateTimeString;
-  createdAt: ISODateTimeString;
-}
-
-export interface AdminProfile {
-  id: UUID;
-  userId: UUID;
-  role: AdminRole;
-  createdAt: ISODateTimeString;
 }
 
 export interface HomepagePayload {

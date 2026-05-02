@@ -1,13 +1,9 @@
 import type { ComponentProps } from "react";
 
-import { Mail, Phone } from "lucide-react";
+import Link from "next/link";
 
-import { TrackableLink } from "@/components/analytics/trackable-link";
 import { Card } from "@/components/ui/card";
-import { ContactForm } from "@/components/forms/contact-form";
 import { Section } from "@/components/ui/section";
-import { SectionViewTracker } from "@/components/analytics/section-view-tracker";
-import { cn } from "@/lib/utils";
 
 function LinkedInIcon(props: ComponentProps<"svg">) {
   return (
@@ -28,28 +24,27 @@ function LinkedInIcon(props: ComponentProps<"svg">) {
   );
 }
 
+function GitHubIcon(props: ComponentProps<"svg">) {
+  return (
+    <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" {...props}>
+      <path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.5v-1.91c-2.78.62-3.37-1.21-3.37-1.21-.45-1.19-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.35 1.12 2.92.86.09-.67.35-1.12.63-1.38-2.22-.26-4.55-1.14-4.55-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05A9.3 9.3 0 0 1 12 6.96c.85 0 1.7.12 2.5.34 1.9-1.33 2.74-1.05 2.74-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.07.36.32.68.94.68 1.9v2.81c0 .28.18.6.69.5A10.12 10.12 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z" />
+    </svg>
+  );
+}
+
 export function ContactSection() {
-  const contactItems = [
+  const socialItems = [
     {
       label: "LinkedIn",
-      value: "https://www.linkedin.com/in/heitor-gbr",
+      value: "linkedin.com/in/heitor-gbr",
       href: "https://www.linkedin.com/in/heitor-gbr",
       icon: LinkedInIcon,
-      external: true,
     },
     {
-      label: "Email",
-      value: "tobiel.reis@gmail.com",
-      href: "mailto:tobiel.reis@gmail.com",
-      icon: Mail,
-      external: false,
-    },
-    {
-      label: "Mobile",
-      value: "+55 (11) 91845-3735",
-      href: "tel:+5511918453735",
-      icon: Phone,
-      external: false,
+      label: "GitHub",
+      value: "github.com/HeitorReis",
+      href: "https://github.com/HeitorReis",
+      icon: GitHubIcon,
     },
   ] as const;
 
@@ -57,63 +52,32 @@ export function ContactSection() {
     <Section
       id="contact"
       eyebrow="Contact"
-      title="Contact"
-      intro="Feel free to get in touch for opportunities, collaborations, or conversations. You can connect through LinkedIn, send an email manually, or reach out by phone if that’s easier for you."
-      className="relative"
+      title="Find me on social media."
+      intro="This site no longer collects contact submissions. Reach out through the social profiles below."
     >
-      <SectionViewTracker sectionKey="contact" />
-      <div className="grid gap-8 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)]">
-        <Card className="min-w-0 space-y-6 overflow-hidden rounded-[32px] bg-surface-muted">
-          <p className="text-sm leading-7 text-muted">
-            The form remains available for a short note, but you can also use the direct contact
-            options below if that is more practical.
-          </p>
-          <div className="space-y-3">
-            {contactItems.map((item) => {
-              const Icon = item.icon;
-              const isLinkedIn = item.label === "LinkedIn";
+      <div className="grid gap-4 md:grid-cols-2">
+        {socialItems.map((item) => {
+          const Icon = item.icon;
 
-              return (
-                <TrackableLink
-                  key={item.label}
-                  href={item.href}
-                  eventType="cta_click"
-                  sectionKey="contact"
-                  metadataJson={{ label: item.label, value: item.value }}
-                  className={cn(
-                    "grid min-w-0 grid-cols-[auto_minmax(0,1fr)] items-start gap-x-3 rounded-[24px] border border-line/70 bg-surface transition-colors hover:border-accent/30",
-                    isLinkedIn ? "p-3.5" : "p-4",
-                  )}
-                  target={item.external ? "_blank" : undefined}
-                  rel={item.external ? "noreferrer" : undefined}
-                >
-                  <Icon
-                    size={isLinkedIn ? 16 : 18}
-                    className={cn("mt-1 shrink-0 text-accent", isLinkedIn && "mt-0.5")}
-                  />
-                  <div className={cn("min-w-0 overflow-hidden", isLinkedIn ? "space-y-0.5" : "space-y-1")}>
-                    <p className="text-meta">{item.label}</p>
-                    <p
-                      className={cn(
-                        "max-w-full text-muted",
-                        isLinkedIn ? "break-words text-[0.82rem] leading-5" : "text-sm leading-6",
-                      )}
-                    >
-                      {item.value}
-                    </p>
-                  </div>
-                </TrackableLink>
-              );
-            })}
-          </div>
-          <p className="text-sm leading-7 text-muted">
-            Only the information you choose to share through the form is stored, along with
-            consent and a timestamp.
-          </p>
-        </Card>
-        <div className="surface-card min-w-0 rounded-[32px] border border-line/70 p-6 md:p-8">
-          <ContactForm />
-        </div>
+          return (
+            <Card key={item.label} className="rounded-[28px] bg-surface-muted">
+              <Link
+                href={item.href}
+                target="_blank"
+                rel="noreferrer"
+                className="grid min-w-0 grid-cols-[auto_minmax(0,1fr)] items-start gap-4"
+              >
+                <Icon className="mt-1 h-5 w-5 shrink-0 text-accent" />
+                <span className="min-w-0">
+                  <span className="block text-sm font-medium text-fg">{item.label}</span>
+                  <span className="mt-1 block break-words text-sm leading-6 text-muted">
+                    {item.value}
+                  </span>
+                </span>
+              </Link>
+            </Card>
+          );
+        })}
       </div>
     </Section>
   );
