@@ -8,6 +8,7 @@ import { HeroSection } from "@/components/sections/hero-section";
 import { HowIThinkSection } from "@/components/sections/how-i-think-section";
 import { PersonalSection } from "@/components/sections/personal-section";
 import { ProjectsSection } from "@/components/sections/projects-section";
+import { StrategicEventsSection } from "@/components/sections/strategic-events-section";
 import { UpdatesSection } from "@/components/sections/updates-section";
 import { getHomepagePayload } from "@/lib/repositories/public/content";
 
@@ -25,6 +26,7 @@ export default async function Home() {
       <ProjectsSection />
       <EducationSection />
       <AchievementsSection achievements={payload.achievements} />
+      <StrategicEventsSection events={payload.strategicEvents} />
       <HowIThinkSection />
       <PersonalSection />
       <UpdatesSection posts={payload.latestPosts} />

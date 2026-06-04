@@ -8,6 +8,7 @@ export type SectionKey =
   | "experience"
   | "projects"
   | "achievements"
+  | "strategic-events"
   | "how-i-think"
   | "personal"
   | "updates"
@@ -109,6 +110,20 @@ export interface Achievement {
   updatedAt: ISODateTimeString;
 }
 
+export interface StrategicEvent {
+  id: UUID;
+  title: string;
+  organization: string;
+  location: string;
+  timeframeLabel: string;
+  summary: string;
+  recruiterSignal: string;
+  impact: string | null;
+  tags: string[];
+  sortOrder: number;
+  isPublished: boolean;
+}
+
 export interface Post {
   id: UUID;
   slug: string;
@@ -139,5 +154,6 @@ export interface HomepagePayload {
   featuredExperiences: Experience[];
   featuredProjects: Project[];
   achievements: Achievement[];
+  strategicEvents: StrategicEvent[];
   latestPosts: Post[];
 }
