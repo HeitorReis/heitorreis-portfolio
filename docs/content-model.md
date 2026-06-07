@@ -7,8 +7,9 @@
   - compact homepage preview plus detail page
 - `projects`
   - technical work with structured context, problem, solution, impact, and learning
-- `achievements`
-  - concise recognition records
+- `milestones`
+  - curated recognition, research, leadership, product-validation, and professional-application records
+  - each record separates direct contribution from contextual evidence
 - `posts`
   - lightweight professional updates
 - `homepageSettings`

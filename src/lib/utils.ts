@@ -21,9 +21,11 @@ const projectCategoryLabels: Record<ProjectCategory, string> = {
 
 const postCategoryLabels: Record<PostCategory, string> = {
   "project-update": "Project Update",
-  "achievement-news": "Recognition",
-  learning: "Learning",
-  milestone: "Milestone",
+  "engineering-perspective": "Engineering Perspective",
+  "professional-reflection": "Professional Reflection",
+  "crm-digital-transformation": "CRM & Digital Transformation",
+  "ai-automation": "AI & Automation",
+  "leadership-communication": "Leadership & Communication",
 };
 
 export function formatProjectCategory(value: ProjectCategory | string) {

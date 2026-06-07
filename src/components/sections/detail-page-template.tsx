@@ -5,7 +5,8 @@ import { Tag } from "@/components/ui/tag";
 
 interface DetailSectionBlock {
   heading: string;
-  body: string;
+  body?: string;
+  paragraphs?: string[];
   list?: string[];
 }
 
@@ -15,6 +16,8 @@ interface DetailPageTemplateProps {
   summary: string;
   imagePath?: string | null;
   meta?: string[];
+  contentEyebrow?: string;
+  contentTitle?: string;
   sections: DetailSectionBlock[];
 }
 
@@ -24,6 +27,8 @@ export function DetailPageTemplate({
   summary,
   imagePath,
   meta = [],
+  contentEyebrow = "Details",
+  contentTitle = "Context and notes",
   sections,
 }: DetailPageTemplateProps) {
   return (
@@ -61,7 +66,7 @@ export function DetailPageTemplate({
         </Container>
       </section>
 
-      <Section eyebrow="Details" title="Context and notes">
+      <Section eyebrow={contentEyebrow} title={contentTitle}>
         <div className="grid gap-6">
           {sections.map((section) => (
             <div
@@ -69,7 +74,16 @@ export function DetailPageTemplate({
               className="surface-card rounded-[28px] border border-line/70 p-6 md:p-8"
             >
               <h2 className="text-2xl font-semibold tracking-[-0.03em]">{section.heading}</h2>
-              <p className="mt-4 max-w-4xl text-sm leading-7 text-muted">{section.body}</p>
+              {section.body ? (
+                <p className="mt-4 max-w-4xl text-sm leading-7 text-muted">{section.body}</p>
+              ) : null}
+              {section.paragraphs?.length ? (
+                <div className="mt-4 max-w-4xl space-y-4 text-base leading-8 text-muted">
+                  {section.paragraphs.map((paragraph) => (
+                    <p key={paragraph}>{paragraph}</p>
+                  ))}
+                </div>
+              ) : null}
               {section.list?.length ? (
                 <ul className="mt-5 grid gap-3 text-sm leading-7 text-muted md:grid-cols-2">
                   {section.list.map((item) => (

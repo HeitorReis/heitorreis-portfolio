@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { DetailPageTemplate } from "@/components/sections/detail-page-template";
-import { getPostBySlug, getPublicDetailSlugs } from "@/lib/repositories/public/content";
+import {
+  getPostBySlug,
+  getPublicDetailSlugs,
+} from "@/lib/repositories/public/content";
 import { formatPostCategory } from "@/lib/utils";
 
 export async function generateStaticParams() {
@@ -44,17 +47,14 @@ export default async function UpdateDetailPage({
 
   return (
     <DetailPageTemplate
-        eyebrow="Update"
-        title={post.title}
-        summary={post.excerpt}
-        imagePath={post.coverImagePath}
-        meta={[formatPostCategory(post.category)]}
-        sections={[
-          {
-            heading: "Note",
-            body: post.content,
-          },
-        ]}
+      eyebrow="Update"
+      title={post.title}
+      summary={post.excerpt}
+      imagePath={post.coverImagePath}
+      meta={[formatPostCategory(post.category)]}
+      contentEyebrow="Article"
+      contentTitle="Reflections and lessons"
+      sections={post.content}
     />
   );
 }

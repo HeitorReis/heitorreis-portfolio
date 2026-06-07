@@ -7,7 +7,7 @@ export type SectionKey =
   | "featured-work"
   | "experience"
   | "projects"
-  | "achievements"
+  | "milestones"
   | "how-i-think"
   | "personal"
   | "updates"
@@ -30,9 +30,16 @@ export type ProjectCategory =
 
 export type PostCategory =
   | "project-update"
-  | "achievement-news"
-  | "learning"
-  | "milestone";
+  | "engineering-perspective"
+  | "professional-reflection"
+  | "crm-digital-transformation"
+  | "ai-automation"
+  | "leadership-communication";
+
+export interface UpdateSection {
+  heading: string;
+  paragraphs: string[];
+}
 
 export interface DetailSection {
   key:
@@ -93,20 +100,34 @@ export interface Project {
   updatedAt: ISODateTimeString;
 }
 
-export interface Achievement {
-  id: UUID;
+export type MilestoneCategory =
+  | "Recognition"
+  | "Research"
+  | "Leadership"
+  | "Product"
+  | "Professional";
+
+export interface MilestoneEvidence {
+  label: string;
+  context: string;
+}
+
+export interface Milestone {
+  id: string;
+  category: MilestoneCategory;
   title: string;
   organization: string;
-  summary: string;
-  impact: string | null;
-  timeframeLabel: string | null;
-  imagePath: string | null;
-  isFeatured: boolean;
-  isPublished: boolean;
-  publishedAt: ISODateTimeString | null;
+  location?: string;
+  startDate: ISODateString;
+  endDate?: ISODateString;
+  displayDate: string;
+  description: string;
+  contribution: string;
+  evidence: MilestoneEvidence[];
+  referenceUrl?: string;
+  referenceLabel?: string;
+  featured?: boolean;
   sortOrder: number;
-  createdAt: ISODateTimeString;
-  updatedAt: ISODateTimeString;
 }
 
 export interface Post {
@@ -114,10 +135,11 @@ export interface Post {
   slug: string;
   title: string;
   excerpt: string;
-  content: string;
+  content: UpdateSection[];
   category: PostCategory;
   relatedSection: SectionKey | null;
   relatedProjectSlug: string | null;
+  sortOrder: number;
   publishedAt: ISODateTimeString | null;
   isPublished: boolean;
   coverImagePath: string | null;
@@ -138,6 +160,6 @@ export interface HomepagePayload {
   settings: HomepageSettings;
   featuredExperiences: Experience[];
   featuredProjects: Project[];
-  achievements: Achievement[];
+  milestones: Milestone[];
   latestPosts: Post[];
 }

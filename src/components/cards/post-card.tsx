@@ -17,14 +17,17 @@ export function PostCard({ title, excerpt, category, href }: PostCardProps) {
     <Card className="flex h-full flex-col gap-4">
       <Tag>{formatPostCategory(category)}</Tag>
       <div className="space-y-3">
-        <h3 className="text-xl font-semibold tracking-[-0.02em]">{title}</h3>
-        {excerpt ? <p className="text-sm leading-7 text-muted">{excerpt}</p> : null}
+        <h3 className="text-[clamp(1.375rem,2vw,1.5rem)] leading-[1.25] font-semibold tracking-[-0.02em]">
+          {title}
+        </h3>
+        {excerpt ? <p className="text-base leading-7 text-muted">{excerpt}</p> : null}
       </div>
       <Link
         href={href}
-        className="inline-flex items-center gap-2 text-sm font-medium text-accent"
+        aria-label={`Read note: ${title}`}
+        className="mt-auto inline-flex min-h-11 items-center gap-2 self-start text-sm font-medium text-accent hover:text-fg"
       >
-        Read note <ArrowUpRight size={16} />
+        Read note <ArrowUpRight size={16} aria-hidden="true" />
       </Link>
     </Card>
   );

@@ -10,8 +10,10 @@ export function UpdatesSection({ posts }: { posts: Post[] }) {
     <Section
       id="updates"
       eyebrow="Updates"
-      title="Short notes on recognition and progress."
-      intro="A few updates that add context to recent work, recognition, and the ideas behind it."
+      title="Notes on technology, products, and professional growth."
+      intro="A collection of practical reflections on software, artificial intelligence, digital products, CRM, and the experiences shaping how I approach technology and business."
+      titleClassName="text-[clamp(2rem,4vw,2.5rem)]"
+      introClassName="text-[1.0625rem] leading-8"
       actions={
         <Link
           href="/updates"
@@ -23,7 +25,7 @@ export function UpdatesSection({ posts }: { posts: Post[] }) {
       className="relative"
     >
       {posts.length ? (
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {posts.map((post) => (
             <PostCard
               key={post.id}

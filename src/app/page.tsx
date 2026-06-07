@@ -1,11 +1,11 @@
 import { SiteShell } from "@/components/layout/site-shell";
-import { AchievementsSection } from "@/components/sections/achievements-section";
 import { ContactSection } from "@/components/sections/contact-section";
 import { EducationSection } from "@/components/sections/education-section";
 import { ExperienceSection } from "@/components/sections/experience-section";
 import { FeaturedWorkSection } from "@/components/sections/featured-work-section";
 import { HeroSection } from "@/components/sections/hero-section";
 import { HowIThinkSection } from "@/components/sections/how-i-think-section";
+import { MilestonesSection } from "@/components/sections/milestones-section";
 import { PersonalSection } from "@/components/sections/personal-section";
 import { ProjectsSection } from "@/components/sections/projects-section";
 import { UpdatesSection } from "@/components/sections/updates-section";
@@ -24,7 +24,7 @@ export default async function Home() {
       <ExperienceSection experiences={payload.featuredExperiences} />
       <ProjectsSection />
       <EducationSection />
-      <AchievementsSection achievements={payload.achievements} />
+      <MilestonesSection milestones={payload.milestones} />
       <HowIThinkSection />
       <PersonalSection />
       <UpdatesSection posts={payload.latestPosts} />
