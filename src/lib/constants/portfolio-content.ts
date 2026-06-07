@@ -31,7 +31,7 @@ export const selectedWorkEntries: CuratedWorkEntry[] = [
     eyebrow: "EMBRAER",
     title: "Sales Digital Tools Intern",
     description:
-      "Work at Embraer that demonstrates Heitor’s ability to build digital solutions around Salesforce, analytics, and AI to support commercial strategy, improve visibility, and strengthen executive decision-making.",
+      "Builds Salesforce, analytics, and AI-driven solutions to support strategic sales processes, improve business visibility, optimize workflows, and strengthen executive-level decision-making.",
     tags: [
       "Salesforce Administration",
       "Salesforce Development",
@@ -40,6 +40,8 @@ export const selectedWorkEntries: CuratedWorkEntry[] = [
       "Business Optimization",
       "Data Analysis",
       "Digital Tools",
+      "CRM Systems",
+      "Executive Communication",
     ],
   },
   {
@@ -49,7 +51,7 @@ export const selectedWorkEntries: CuratedWorkEntry[] = [
     eyebrow: "EMBRAER",
     title: "Contracts Administration Intern",
     description:
-      "An operations-focused experience at Embraer that demonstrates Heitor’s ability to turn complex data, reporting flows, and manual routines into structured systems, measurable savings, and faster business execution.",
+      "Transformed contract administration routines into structured, automated, and transparent processes through data analysis, dashboards, spreadsheet optimization, reporting, and workflow automation.",
     tags: [
       "Data Analysis",
       "Business Intelligence",
@@ -68,19 +70,20 @@ export const selectedWorkEntries: CuratedWorkEntry[] = [
     slug: "emma-founder-developer",
     href: "/experience/emma-founder-developer",
     eyebrow: "EMMA",
-    title: "Founder & Developer – Emma",
+    title: "Founder & Developer - Emma Digital Health",
     description:
-      "Emma reflects Heitor’s ability to lead from concept to execution — connecting AI, digital biomarkers, product strategy, and full-stack development to create a clinically meaningful health technology solution.",
+      "Leads the development of Emma, a mobile-first digital health platform focused on monitoring multiple sclerosis through AI, digital biomarkers, gamified engagement, and longitudinal patient interaction.",
     tags: [
-      "Software Engineering",
+      "Flutter",
+      "Dart",
       "Digital Health",
       "Artificial Intelligence",
-      "Clinical Data Science",
+      "Digital Biomarkers",
+      "Gamification",
       "Product Development",
-      "Flask",
-      "Python",
-      "Next.js",
-      "TypeScript",
+      "Clinical Data Science",
+      "Mobile Development",
+      "Human-Computer Interaction",
     ],
   },
   {
@@ -91,7 +94,7 @@ export const selectedWorkEntries: CuratedWorkEntry[] = [
     eyebrow: "LOW-LEVEL SYSTEMS",
     title: "Compiler & ARM Processor Projects",
     description:
-      "A technical body of work that reflects Heitor’s depth in low-level computing, spanning compiler construction, instruction flow, machine code generation, processor design, and hardware implementation in Verilog.",
+      "A technical body of work that reflects Heitor's depth in low-level computing, spanning compiler construction, instruction flow, machine code generation, processor design, and hardware implementation in Verilog.",
     tags: [
       "Compiler Design",
       "Computer Architecture",
@@ -109,9 +112,9 @@ export const academicPathEntries: AcademicPathEntry[] = [
   {
     institution: "UNIFESP",
     title: "B.Sc. in Science and Technology",
-    meta: "Completed · 2022–2025",
+    meta: "Completed - 2022-2025",
     description:
-      "A multidisciplinary foundation in mathematics, physics, computing, and engineering principles that strengthened Heitor’s analytical thinking, research ability, and systems-oriented approach to problem solving.",
+      "A multidisciplinary foundation in mathematics, physics, computing, and engineering principles that strengthened Heitor's analytical thinking, research ability, and systems-oriented approach to problem solving.",
     tags: [
       "Mathematics",
       "Physics",
@@ -123,9 +126,9 @@ export const academicPathEntries: AcademicPathEntry[] = [
   {
     institution: "UNIFESP",
     title: "B.Sc. in Computer Engineering",
-    meta: "Ongoing · 2022–2027",
+    meta: "Ongoing - 2022-2027",
     description:
-      "An ongoing engineering path focused on software development, embedded systems, artificial intelligence, and data analysis, reinforcing Heitor’s ability to integrate hardware, software, and applied problem-solving.",
+      "An ongoing engineering path focused on software development, embedded systems, artificial intelligence, and data analysis, reinforcing Heitor's ability to integrate hardware, software, and applied problem-solving.",
     tags: [
       "Software Engineering",
       "Embedded Systems",
@@ -147,7 +150,7 @@ export const technicalTrainingEntries: TechnicalTrainingEntry[] = [
     provider: "Huawei",
     title: "Seeds for the Future 2024",
     description:
-      "A highly selective technology program that deepened Heitor’s exposure to artificial intelligence, connectivity, cloud, and the broader impact of emerging technologies.",
+      "A highly selective technology program that deepened Heitor's exposure to artificial intelligence, connectivity, cloud, and the broader impact of emerging technologies.",
   },
   {
     provider: "Huawei",
@@ -183,7 +186,7 @@ export const technicalTrainingEntries: TechnicalTrainingEntry[] = [
     provider: "EMBRAER",
     title: "Power Apps",
     description:
-      "Low-code application training centered on internal tool creation, interface design, and process optimization through Microsoft’s ecosystem.",
+      "Low-code application training centered on internal tool creation, interface design, and process optimization through Microsoft's ecosystem.",
   },
   {
     provider: "EMBRAER",
@@ -192,7 +195,7 @@ export const technicalTrainingEntries: TechnicalTrainingEntry[] = [
       "Training in AI assistant creation, natural language workflows, and productivity-oriented automation within Microsoft environments.",
   },
   {
-    provider: "Curso em Vídeo",
+    provider: "Curso em Video",
     title: "Python Programming",
     description:
       "A practical programming foundation covering data structures, functions, file handling, and object-oriented programming for structured software development.",
