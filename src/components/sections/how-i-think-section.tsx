@@ -1,7 +1,27 @@
-import { Quote } from "lucide-react";
+import { Layers, Target, Users } from "lucide-react";
 
-import { Reveal } from "@/components/motion/reveal";
+import { Reveal, RevealGroup, RevealItem } from "@/components/motion/reveal";
+import { SpotlightCard } from "@/components/motion/spotlight-card";
 import { Section } from "@/components/ui/section";
+
+const principles = [
+  {
+    icon: Layers,
+    label: "Systems thinking",
+    description:
+      "I move between hardware, software, and product layers instead of staying in just one.",
+  },
+  {
+    icon: Users,
+    label: "Built for real use",
+    description: "Depth only matters if the person using it can actually act on it.",
+  },
+  {
+    icon: Target,
+    label: "Evidence over assumptions",
+    description: "I check what I build against real outcomes, not just a working demo.",
+  },
+];
 
 export function HowIThinkSection() {
   return (
@@ -9,25 +29,42 @@ export function HowIThinkSection() {
       id="how-i-think"
       eyebrow="How I think"
       title="Technical depth matters more when it stays useful."
-      intro="Heitor is especially interested in problems that sit between technical depth and real-world use, whether in software, systems, AI, or digital health."
+      intro="I'm drawn to problems that sit between technical depth and real-world use, across software, systems, AI, and digital health."
       className="relative"
     >
-      <Reveal>
-        <div className="surface-card reading-width relative overflow-hidden rounded-[32px] border border-line/70 p-8 pl-10 text-base leading-8 text-muted md:pl-12">
-          <div
-            aria-hidden="true"
-            className="absolute inset-y-6 left-0 w-1 rounded-full bg-gradient-to-b from-accent via-accent-2 to-accent-3"
-          />
-          <Quote
-            aria-hidden="true"
-            size={36}
-            className="mb-3 text-accent/30"
-          />
-          What stands out in his profile is not only technical range, but the ability to connect
-          different layers of a problem clearly, from low-level systems to applied tools shaped by
-          real users and real decisions.
-        </div>
-      </Reveal>
+      <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+        <Reveal>
+          <p className="reading-width text-xl leading-9 text-fg md:text-2xl md:leading-[1.6]">
+            What I try to bring isn&apos;t just technical range, but the ability to connect the
+            different layers of a problem clearly &mdash; from low-level systems to the applied
+            tools shaped by real users and real decisions.
+          </p>
+        </Reveal>
+
+        <RevealGroup className="grid gap-4" stagger={0.08}>
+          {principles.map((principle) => {
+            const Icon = principle.icon;
+
+            return (
+              <RevealItem key={principle.label}>
+                <SpotlightCard contentClassName="flex-row items-start gap-4" className="p-5">
+                  <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-accent-soft text-accent">
+                    <Icon size={18} aria-hidden="true" />
+                  </span>
+                  <span>
+                    <span className="block text-sm font-semibold text-fg">
+                      {principle.label}
+                    </span>
+                    <span className="mt-1 block text-sm leading-6 text-muted">
+                      {principle.description}
+                    </span>
+                  </span>
+                </SpotlightCard>
+              </RevealItem>
+            );
+          })}
+        </RevealGroup>
+      </div>
     </Section>
   );
 }
