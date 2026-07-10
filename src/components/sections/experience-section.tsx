@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import type { Experience } from "@/types/domain";
 import { ExperienceCard } from "@/components/cards/experience-card";
+import { RevealGroup, RevealItem } from "@/components/motion/reveal";
 import { EmptyState } from "@/components/ui/empty-state";
 import { Section } from "@/components/ui/section";
 import { selectedWorkEntries } from "@/lib/constants/portfolio-content";
@@ -52,26 +53,27 @@ export function ExperienceSection({ experiences }: { experiences: Experience[] }
       className="relative"
     >
       {orderedExperiences.length ? (
-        <div className="grid gap-6">
+        <RevealGroup className="grid gap-6" stagger={0.1}>
           {orderedExperiences.map((experience) => {
             const override = experienceOverrides.get(experience.slug);
 
             return (
-              <ExperienceCard
-                key={experience.id}
-                title={override?.title ?? experience.title}
-                organization={override?.organization ?? experience.organization}
-                location={experience.location}
-                timeframeLabel={experience.timeframeLabel}
-                summary={override?.summary ?? experience.summary}
-                responsibilities={experience.responsibilities}
-                technologies={override?.technologies ?? experience.technologies}
-                impact={experience.impact}
-                href={`/experience/${experience.slug}`}
-              />
+              <RevealItem key={experience.id}>
+                <ExperienceCard
+                  title={override?.title ?? experience.title}
+                  organization={override?.organization ?? experience.organization}
+                  location={experience.location}
+                  timeframeLabel={experience.timeframeLabel}
+                  summary={override?.summary ?? experience.summary}
+                  responsibilities={experience.responsibilities}
+                  technologies={override?.technologies ?? experience.technologies}
+                  impact={experience.impact}
+                  href={`/experience/${experience.slug}`}
+                />
+              </RevealItem>
             );
           })}
-        </div>
+        </RevealGroup>
       ) : (
         <EmptyState
           title="No public experience yet"

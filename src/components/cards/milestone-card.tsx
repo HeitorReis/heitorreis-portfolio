@@ -1,6 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 
-import { Card } from "@/components/ui/card";
+import { SpotlightCard } from "@/components/motion/spotlight-card";
 import { Tag } from "@/components/ui/tag";
 import { cn } from "@/lib/utils";
 import type { Milestone } from "@/types/domain";
@@ -12,19 +12,12 @@ interface MilestoneCardProps {
 
 export function MilestoneCard({ milestone, position }: MilestoneCardProps) {
   return (
-    <Card
+    <SpotlightCard
+      accent={milestone.featured}
       className={cn(
-        "group relative overflow-hidden transition-[border-color,background-color,box-shadow] hover:border-accent/35",
         milestone.featured && "border-accent/30 bg-accent-soft/45 shadow-md",
       )}
     >
-      {milestone.featured ? (
-        <div
-          aria-hidden="true"
-          className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-accent to-accent/20"
-        />
-      ) : null}
-
       <article aria-labelledby={`${milestone.id}-title`} className="space-y-6">
         <div className="space-y-3">
           <div className="flex flex-wrap items-center gap-2">
@@ -109,6 +102,6 @@ export function MilestoneCard({ milestone, position }: MilestoneCardProps) {
           </a>
         ) : null}
       </article>
-    </Card>
+    </SpotlightCard>
   );
 }

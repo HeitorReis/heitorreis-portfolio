@@ -1,4 +1,5 @@
 import { PostCard } from "@/components/cards/post-card";
+import { RevealGroup, RevealItem } from "@/components/motion/reveal";
 import { EmptyState } from "@/components/ui/empty-state";
 import { Section } from "@/components/ui/section";
 import { getPublishedPosts } from "@/lib/repositories/public/content";
@@ -20,17 +21,18 @@ export default async function UpdatesPage() {
       introClassName="text-[1.0625rem] leading-8"
     >
       {posts.length ? (
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <RevealGroup className="grid gap-6 md:grid-cols-2 xl:grid-cols-3" stagger={0.08}>
           {posts.map((post) => (
-            <PostCard
-              key={post.id}
-              title={post.title}
-              excerpt={post.excerpt}
-              category={post.category}
-              href={`/updates/${post.slug}`}
-            />
+            <RevealItem key={post.id}>
+              <PostCard
+                title={post.title}
+                excerpt={post.excerpt}
+                category={post.category}
+                href={`/updates/${post.slug}`}
+              />
+            </RevealItem>
           ))}
-        </div>
+        </RevealGroup>
       ) : (
         <EmptyState
           title="No public updates yet"

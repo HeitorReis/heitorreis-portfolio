@@ -1,13 +1,24 @@
 import type { Experience, Project } from "@/types/domain";
 import { FeaturedWorkCard } from "@/components/cards/featured-work-card";
+import { RevealGroup, RevealItem } from "@/components/motion/reveal";
 import { EmptyState } from "@/components/ui/empty-state";
 import { Section } from "@/components/ui/section";
+import { cn } from "@/lib/utils";
 import { selectedWorkEntries } from "@/lib/constants/portfolio-content";
 
 interface FeaturedWorkSectionProps {
   experiences: Experience[];
   projects: Project[];
 }
+
+const bentoSpanClasses = [
+  "sm:col-span-2 lg:col-span-4 lg:row-span-2",
+  "lg:col-span-2",
+  "lg:col-span-2",
+  "sm:col-span-2 lg:col-span-2",
+  "lg:col-span-2",
+  "lg:col-span-2",
+];
 
 export function FeaturedWorkSection({
   experiences,
@@ -52,11 +63,19 @@ export function FeaturedWorkSection({
       className="relative"
     >
       {items.length ? (
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-          {items.map((item) => (
-            <FeaturedWorkCard key={item.href} {...item} />
+        <RevealGroup
+          className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-6"
+          stagger={0.1}
+        >
+          {items.map((item, index) => (
+            <RevealItem
+              key={item.href}
+              className={cn(bentoSpanClasses[index % bentoSpanClasses.length])}
+            >
+              <FeaturedWorkCard {...item} featured={index === 0} />
+            </RevealItem>
           ))}
-        </div>
+        </RevealGroup>
       ) : (
         <EmptyState
           title="No featured work yet"

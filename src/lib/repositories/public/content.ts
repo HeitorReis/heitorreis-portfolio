@@ -454,6 +454,92 @@ export const projects: Project[] = [
     createdAt: publishedAt,
     updatedAt: publishedAt,
   },
+  {
+    id: "project-frai-personal-agent",
+    slug: "frai-personal-agent",
+    title: "FRAI — Friend AI",
+    category: "ai-driven-system",
+    summary:
+      "A local-first personal AI agent that turns natural-language requests into real productivity actions, built as a scalable alternative to hardcoded automation.",
+    context:
+      "FRAI was created to explore how a personal agent can sit between user intention and computer action for everyday productivity tasks that are too varied for traditional hardcoded workflows.",
+    problem:
+      "Traditional automation only works when every step is defined in advance. Tasks like triaging email, drafting replies, or organizing files vary too much from request to request to script directly, but giving an agent broad system access without limits creates its own risk.",
+    solution:
+      "FRAI interprets natural-language commands and routes them through modular tools for email, file operations, summarization, and memory, built around explicit safety and permission boundaries so sensitive or irreversible actions require confirmation.",
+    technologies: [
+      "Python",
+      "AI Agents",
+      "Local LLMs",
+      "Tool Orchestration",
+      "Modular Architecture",
+      "File Automation",
+      "Memory Systems",
+      "Safety and Permissions Design",
+    ],
+    impact: [
+      "Centralized multiple productivity workflows, including email, files, and summarization, under one natural-language interface.",
+      "Established a modular agent architecture that supports new tools and integrations without rewriting the core system.",
+    ],
+    learnings: [
+      "Building FRAI reinforced that agent autonomy needs architecture, not just capability: clear tool boundaries, observable execution, and human confirmation on sensitive actions.",
+    ],
+    isFeatured: true,
+    featureRank: 2,
+    isPublished: true,
+    publishedAt,
+    relatedExperienceId: null,
+    imagePath: null,
+    repoUrl: null,
+    createdAt: publishedAt,
+    updatedAt: publishedAt,
+  },
+  {
+    id: "project-embedded-linux-nintendo-3ds",
+    slug: "embedded-linux-nintendo-3ds",
+    title: "Embedded Linux on Nintendo 3DS",
+    category: "hardware",
+    summary:
+      "A complete embedded Linux environment cross-compiled and booted on real Nintendo 3DS hardware, from kernel to bootloader to an interactive login.",
+    context:
+      "Built to go past emulation and get a real, constrained ARM handheld running a Linux environment compiled from source, with every stage of the boot chain assembled and debugged by hand.",
+    problem:
+      "Booting Linux on a fixed-function handheld means there is no reference desktop stack to lean on: the kernel, root filesystem, ARM9 firmware, bootloader, and device tree all have to be cross-compiled, sized, and sequenced correctly for the hardware to reach an interactive login.",
+    solution:
+      "Set up a WSL2 cross-compilation environment, built a custom Linux kernel and a minimal Buildroot root filesystem for the 3DS's ARM core, compiled ARM9 firmware and the FIRM Linux loader, configured device trees and initramfs, and debugged boot failures by tracing bootloader source and kernel logs until the system reached a working login prompt.",
+    technologies: [
+      "Embedded Linux",
+      "Linux Kernel",
+      "Buildroot",
+      "ARM Architecture",
+      "Cross-compilation",
+      "Bootloaders",
+      "Device Trees",
+      "Initramfs",
+      "WSL2",
+      "GCC",
+      "Make",
+      "Git",
+      "Low-Level Debugging",
+    ],
+    impact: [
+      "Booted a custom Linux environment on physical Old 3DS hardware, reaching an interactive login.",
+      "Integrated 5+ low-level components, including the bootloader, ARM9 firmware, kernel, device trees, and root filesystem, into one working boot chain.",
+      "Resolved multiple boot-stage failures through source-level inspection of the bootloader and kernel debugging.",
+    ],
+    learnings: [
+      "This project sharpened low-level debugging instincts: when a system fails to boot, the fix is rarely in one layer, and tracing the chain from bootloader to kernel to filesystem is what actually finds it.",
+    ],
+    isFeatured: true,
+    featureRank: 3,
+    isPublished: true,
+    publishedAt,
+    relatedExperienceId: null,
+    imagePath: null,
+    repoUrl: "https://github.com/linux-3ds",
+    createdAt: publishedAt,
+    updatedAt: publishedAt,
+  },
 ];
 
 export const milestones: Milestone[] = [
@@ -481,7 +567,7 @@ export const milestones: Milestone[] = [
       },
     ],
     featured: true,
-    sortOrder: 1,
+    sortOrder: 6,
   },
   {
     id: "municip-ai-congress-2024",
@@ -507,7 +593,7 @@ export const milestones: Milestone[] = [
       },
       { label: "National congress", context: "original research presented" },
     ],
-    sortOrder: 2,
+    sortOrder: 8,
   },
   {
     id: "federal-revenue-hackathon-2025",
@@ -529,26 +615,65 @@ export const milestones: Milestone[] = [
       { label: "1,500+ participants", context: "across six hubs program-wide" },
       { label: "20+ volunteers and mentors", context: "coordinated locally" },
     ],
-    sortOrder: 3,
+    sortOrder: 5,
   },
   {
     id: "huawei-seeds-2025",
     category: "Recognition",
-    title: "Selected — Huawei Seeds for the Future 2025",
+    title: "Two-Time Selection — Huawei Seeds for the Future (2024 & 2025)",
     organization: "Huawei",
     location: "Brazil, remote",
-    startDate: "2025-06-01",
-    displayDate: "June 2025",
+    startDate: "2024-06-01",
+    endDate: "2025-06-30",
+    displayDate: "June 2024 & June 2025",
     description:
-      "Selected for Huawei’s national technology-development program and completed learning paths covering artificial intelligence, cloud computing, 5G, innovation, digital transformation, and sustainability.",
+      "Selected in back-to-back years for Huawei's national technology-development program and completed learning paths covering artificial intelligence, cloud computing, 5G, innovation, digital transformation, and sustainability, with top-tier evaluation results both years.",
     contribution:
-      "Completed mandatory and elective technical modules and participated in evaluated learning activities.",
+      "Completed mandatory and elective technical modules and participated in evaluated learning activities in both program cycles.",
     evidence: [
-      { label: "One of 50", context: "participants selected in Brazil" },
+      { label: "One of 50", context: "participants selected in Brazil, twice" },
       { label: "AI, cloud and 5G", context: "technical learning paths" },
-      { label: "Full completion", context: "mandatory and elective modules" },
+      { label: "Top evaluation scores", context: "across both program years" },
     ],
     sortOrder: 4,
+  },
+  {
+    id: "salesforce-agentforce-world-tour-2026",
+    category: "Professional",
+    title: "Invited Participant — Salesforce Agentforce World Tour São Paulo",
+    organization: "Salesforce",
+    location: "São Paulo, Brazil",
+    startDate: "2026-05-01",
+    displayDate: "May 2026",
+    description:
+      "Attended by direct invitation, going deep on Agentforce, Data 360, and autonomous AI agents, and connecting that trajectory to hands-on CRM, automation, and digital-tools work at Embraer.",
+    contribution:
+      "Session participation, technical analysis of Agentforce and Data 360, and translation of platform trends into applicable direction for ongoing Salesforce work.",
+    evidence: [
+      { label: "Direct invitation", context: "nominal invite from Salesforce" },
+      { label: "Agentforce & Data 360", context: "core technical focus areas" },
+      { label: "Applied at Embraer", context: "connected to live CRM and automation work" },
+    ],
+    sortOrder: 3,
+  },
+  {
+    id: "goi-peace-foundation-essay-2024",
+    category: "Recognition",
+    title: "Honorable Mention — GOI Peace Foundation Global Essay Contest",
+    organization: "GOI Peace Foundation",
+    location: "Global, remote",
+    startDate: "2024-10-31",
+    displayDate: "October 2024",
+    description:
+      "Received an Honorable Mention in the GOI Peace Foundation's International Essay Contest for Young People for an essay on personally overcoming conflict, standing out in one of the largest fields the competition has drawn.",
+    contribution:
+      "Authored and revised the essay through the international review process.",
+    evidence: [
+      { label: "15,744 entries", context: "submitted worldwide" },
+      { label: "152 countries", context: "represented in the competition" },
+      { label: "Honorable Mention", context: "awarded October 31, 2024" },
+    ],
+    sortOrder: 7,
   },
   {
     id: "emma-incube-hospitalar-2026",
@@ -578,7 +703,7 @@ export const milestones: Milestone[] = [
           "presented to hospitals, pharmaceutical companies, and healthcare stakeholders",
       },
     ],
-    sortOrder: 5,
+    sortOrder: 2,
   },
   {
     id: "embraer-ai-event-intelligence-2026",
@@ -601,7 +726,7 @@ export const milestones: Milestone[] = [
         context: "summaries, insights, and action items",
       },
     ],
-    sortOrder: 6,
+    sortOrder: 1,
   },
 ];
 

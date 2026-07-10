@@ -1,7 +1,8 @@
 "use client";
-/* eslint-disable @next/next/no-img-element */
 
 import { useState } from "react";
+import Image from "next/image";
+import { Sparkles } from "lucide-react";
 
 import { resolveImagePath } from "@/lib/constants/placeholders";
 import { cn } from "@/lib/utils";
@@ -12,6 +13,7 @@ interface MediaFrameProps {
   className?: string;
   imageClassName?: string;
   aspectClassName?: string;
+  sizes?: string;
 }
 
 export function MediaFrame({
@@ -20,6 +22,7 @@ export function MediaFrame({
   className,
   imageClassName,
   aspectClassName = "aspect-[4/3]",
+  sizes = "(min-width: 1024px) 40vw, 100vw",
 }: MediaFrameProps) {
   const [hasError, setHasError] = useState(false);
   const resolved = resolveImagePath(src);
@@ -28,15 +31,20 @@ export function MediaFrame({
     return (
       <div
         className={cn(
-          "relative overflow-hidden rounded-[24px] border border-dashed border-line bg-surface-muted",
+          "relative flex items-center justify-center overflow-hidden rounded-[24px] border border-line/70 bg-surface-muted",
           aspectClassName,
           className,
         )}
       >
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.12),_transparent_40%)]" />
-        <div className="relative flex h-full items-end p-5">
-          <span className="text-meta">Image unavailable</span>
-        </div>
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-gradient-to-br from-accent/15 via-accent-2/10 to-accent-3/15"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 text-accent/40 opacity-20 [background-image:radial-gradient(currentColor_1px,transparent_1px)] [background-size:18px_18px]"
+        />
+        <Sparkles aria-hidden="true" className="relative h-9 w-9 text-accent/50" />
       </div>
     );
   }
@@ -49,11 +57,12 @@ export function MediaFrame({
         className,
       )}
     >
-      <img
+      <Image
         src={resolved}
         alt={alt ?? "Portfolio image"}
-        className={cn("h-full w-full object-cover", imageClassName)}
-        loading="lazy"
+        fill
+        sizes={sizes}
+        className={cn("object-cover", imageClassName)}
         onError={() => setHasError(true)}
       />
     </div>

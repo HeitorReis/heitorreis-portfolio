@@ -1,4 +1,5 @@
 import { ProjectCard } from "@/components/cards/project-card";
+import { RevealGroup, RevealItem } from "@/components/motion/reveal";
 import { Section } from "@/components/ui/section";
 
 const githubProjects = [
@@ -54,20 +55,21 @@ export function ProjectsSection() {
           practical work in systems, tooling, performance, and applied AI.
         </p>
       </div>
-      <div className="grid gap-6 md:grid-cols-2">
+      <RevealGroup className="grid gap-6 md:grid-cols-2" stagger={0.08}>
         {githubProjects.map((project) => (
-          <ProjectCard
-            key={project.id}
-            title={project.title}
-            summary={project.summary}
-            technologies={project.technologies}
-            href={project.href}
-            badge={project.badge}
-            badgeTone={project.badgeTone}
-            ctaLabel="View repository"
-          />
+          <RevealItem key={project.id}>
+            <ProjectCard
+              title={project.title}
+              summary={project.summary}
+              technologies={project.technologies}
+              href={project.href}
+              badge={project.badge}
+              badgeTone={project.badgeTone}
+              ctaLabel="View repository"
+            />
+          </RevealItem>
         ))}
-      </div>
+      </RevealGroup>
     </Section>
   );
 }

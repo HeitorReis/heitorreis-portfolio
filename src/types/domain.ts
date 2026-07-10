@@ -96,6 +96,7 @@ export interface Project {
   publishedAt: ISODateTimeString | null;
   relatedExperienceId: UUID | null;
   imagePath: string | null;
+  repoUrl?: string | null;
   createdAt: ISODateTimeString;
   updatedAt: ISODateTimeString;
 }

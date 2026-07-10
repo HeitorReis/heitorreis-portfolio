@@ -4,7 +4,7 @@ export const defaultHomepageSettings: HomepageSettings = {
   id: 1,
   headline: "Heitor Reis",
   subheadline:
-    "With experience spanning Embraer, healthtech, research, and systems projects, Heitor brings a multidisciplinary engineering profile shaped by technical depth and practical execution.",
+    "Computer Engineering student building across AI, low-level systems, and digital health — from winning the Harvard Brazil Hackathon with a digital-health platform to shipping AI-driven tools inside Embraer's commercial and contracts teams.",
   heroImagePath: "hero-heitor-profile.jpg",
   showPhotoInHero: true,
   updatedAt: new Date(0).toISOString(),

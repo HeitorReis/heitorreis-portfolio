@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
-import { Card } from "@/components/ui/card";
+import { SpotlightCard } from "@/components/motion/spotlight-card";
 import { Tag } from "@/components/ui/tag";
 
 interface ExperienceCardProps {
@@ -34,7 +34,7 @@ export function ExperienceCard({
   ].filter((section) => section.items.length > 0);
 
   return (
-    <Card className="flex h-full flex-col gap-6">
+    <SpotlightCard contentClassName="gap-6">
       <div className="space-y-2">
         <p className="text-meta">{organization}</p>
         <h3 className="text-2xl font-semibold tracking-[-0.03em]">{title}</h3>
@@ -42,7 +42,7 @@ export function ExperienceCard({
           {location ? <span>{location}</span> : null}
           {timeframeLabel ? <Tag>{timeframeLabel}</Tag> : null}
         </div>
-        <p className="text-sm leading-7 text-muted">{summary}</p>
+        <p className="line-clamp-2 text-sm leading-7 text-muted">{summary}</p>
       </div>
 
       {sections.length ? (
@@ -62,10 +62,10 @@ export function ExperienceCard({
 
       <Link
         href={href}
-        className="inline-flex items-center gap-2 text-sm font-medium text-accent"
+        className="mt-auto inline-flex items-center gap-2 text-sm font-medium text-accent"
       >
         View details <ArrowUpRight size={16} />
       </Link>
-    </Card>
+    </SpotlightCard>
   );
 }

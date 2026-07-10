@@ -15,14 +15,27 @@ const ibmPlexMono = IBM_Plex_Mono({
   weight: ["400", "500", "600"],
 });
 
+const siteDescription =
+  "Portfolio of Heitor Reis, a Computer Engineering student working across AI, systems, research, and healthtech.";
+
 export const metadata: Metadata = {
   metadataBase: new URL(env.publicSiteUrl || "http://localhost:3000"),
   title: {
-    default: "Heitor | Computer Engineering Student",
-    template: "%s | Heitor",
+    default: "Heitor Reis | Computer Engineering Student",
+    template: "%s | Heitor Reis",
   },
-  description:
-    "Portfolio of Heitor, a Computer Engineering student working across AI, systems, research, and healthtech.",
+  description: siteDescription,
+  openGraph: {
+    type: "website",
+    siteName: "Heitor Reis",
+    title: "Heitor Reis | Computer Engineering Student",
+    description: siteDescription,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Heitor Reis | Computer Engineering Student",
+    description: siteDescription,
+  },
   robots: env.siteIndexingEnabled
     ? {
         index: true,

@@ -91,6 +91,7 @@ export default async function ProjectDetailPage({
         summary={project.summary}
         imagePath={project.imagePath}
         meta={[formatProjectCategory(project.category)]}
+        primaryLink={project.repoUrl ? { href: project.repoUrl, label: "View repository" } : null}
         sections={sections}
     />
   );

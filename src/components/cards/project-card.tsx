@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
-import { Card } from "@/components/ui/card";
+import { SpotlightCard } from "@/components/motion/spotlight-card";
 import { Tag } from "@/components/ui/tag";
 import { formatProjectCategory } from "@/lib/utils";
 
@@ -31,7 +31,7 @@ export function ProjectCard({
   ctaLabel = "View details",
 }: ProjectCardProps) {
   return (
-    <Card className="flex h-full flex-col gap-5">
+    <SpotlightCard>
       <div className="space-y-3">
         {badge || category ? (
           <div className="flex flex-wrap items-center gap-2">
@@ -40,7 +40,7 @@ export function ProjectCard({
           </div>
         ) : null}
         <h3 className="text-xl font-semibold tracking-[-0.02em]">{title}</h3>
-        <p className="text-sm leading-7 text-muted">{summary}</p>
+        <p className="line-clamp-3 text-sm leading-7 text-muted">{summary}</p>
       </div>
 
       {Boolean(technologies.length || impact.length) ? (
@@ -54,8 +54,10 @@ export function ProjectCard({
           ) : null}
           {impact.length ? (
             <ul className="space-y-2 text-sm leading-6 text-muted">
-              {impact.slice(0, 2).map((item) => (
-                <li key={item}>{item}</li>
+              {impact.slice(0, 1).map((item) => (
+                <li key={item} className="line-clamp-2">
+                  {item}
+                </li>
               ))}
             </ul>
           ) : null}
@@ -64,10 +66,10 @@ export function ProjectCard({
 
       <Link
         href={href}
-        className="inline-flex items-center gap-2 text-sm font-medium text-accent"
+        className="mt-auto inline-flex items-center gap-2 text-sm font-medium text-accent"
       >
         {ctaLabel} <ArrowUpRight size={16} />
       </Link>
-    </Card>
+    </SpotlightCard>
   );
 }

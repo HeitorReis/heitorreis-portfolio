@@ -1,8 +1,12 @@
 import type { ComponentProps } from "react";
 
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 
-import { Card } from "@/components/ui/card";
+import { AuroraBackground } from "@/components/motion/aurora-background";
+import { Magnetic } from "@/components/motion/magnetic";
+import { RevealGroup, RevealItem } from "@/components/motion/reveal";
+import { SpotlightCard } from "@/components/motion/spotlight-card";
 import { Section } from "@/components/ui/section";
 
 function LinkedInIcon(props: ComponentProps<"svg">) {
@@ -54,31 +58,47 @@ export function ContactSection() {
       eyebrow="Contact"
       title="Find me on social media."
       intro="This site no longer collects contact submissions. Reach out through the social profiles below."
+      className="relative overflow-hidden"
     >
-      <div className="grid gap-4 md:grid-cols-2">
+      <AuroraBackground className="opacity-60" />
+      <RevealGroup className="relative grid gap-4 md:grid-cols-2" stagger={0.1}>
         {socialItems.map((item) => {
           const Icon = item.icon;
 
           return (
-            <Card key={item.label} className="rounded-[28px] bg-surface-muted">
-              <Link
-                href={item.href}
-                target="_blank"
-                rel="noreferrer"
-                className="grid min-w-0 grid-cols-[auto_minmax(0,1fr)] items-start gap-4"
-              >
-                <Icon className="mt-1 h-5 w-5 shrink-0 text-accent" />
-                <span className="min-w-0">
-                  <span className="block text-sm font-medium text-fg">{item.label}</span>
-                  <span className="mt-1 block break-words text-sm leading-6 text-muted">
-                    {item.value}
-                  </span>
-                </span>
-              </Link>
-            </Card>
+            <RevealItem key={item.label}>
+              <Magnetic strength={0.12} className="block h-full">
+                <SpotlightCard
+                  className="bg-surface-muted"
+                  contentClassName="grid min-w-0 grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-4"
+                >
+                  <Link
+                    href={item.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="col-span-3 grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-4"
+                  >
+                    <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-accent-soft text-accent">
+                      <Icon className="h-5 w-5" />
+                    </span>
+                    <span className="min-w-0">
+                      <span className="block text-sm font-medium text-fg">{item.label}</span>
+                      <span className="mt-1 block break-words text-sm leading-6 text-muted">
+                        {item.value}
+                      </span>
+                    </span>
+                    <ArrowUpRight
+                      size={18}
+                      className="shrink-0 text-muted transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-accent"
+                      aria-hidden="true"
+                    />
+                  </Link>
+                </SpotlightCard>
+              </Magnetic>
+            </RevealItem>
           );
         })}
-      </div>
+      </RevealGroup>
     </Section>
   );
 }

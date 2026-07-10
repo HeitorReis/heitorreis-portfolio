@@ -23,6 +23,44 @@ export interface TechnicalTrainingEntry {
   description: string;
 }
 
+export interface LanguageEntry {
+  language: string;
+  level: string;
+  detail: string;
+}
+
+export interface LeadershipEntry {
+  title: string;
+  organization: string;
+  timeframe: string;
+  summary: string;
+}
+
+export interface ImpactStatEntry {
+  value: number;
+  prefix?: string;
+  suffix?: string;
+  label: string;
+}
+
+export const skillMarqueeEntries: readonly string[] = [
+  "Salesforce",
+  "Power BI",
+  "Python",
+  "Flutter & Dart",
+  "Next.js",
+  "TypeScript",
+  "Verilog",
+  "Embedded Linux",
+  "AI Agents",
+  "Power Automate",
+  "Power Apps",
+  "Copilot Studio",
+  "Huawei Cloud",
+  "ARM Architecture",
+  "Git",
+];
+
 export const selectedWorkEntries: CuratedWorkEntry[] = [
   {
     kind: "experience",
@@ -105,6 +143,110 @@ export const selectedWorkEntries: CuratedWorkEntry[] = [
       "Digital Logic Design",
       "Embedded Systems",
     ],
+  },
+  {
+    kind: "project",
+    slug: "embedded-linux-nintendo-3ds",
+    href: "/projects/embedded-linux-nintendo-3ds",
+    eyebrow: "EMBEDDED SYSTEMS",
+    title: "Embedded Linux on Nintendo 3DS",
+    description:
+      "A complete embedded Linux stack cross-compiled from source and booted on real Nintendo 3DS hardware, from kernel and bootloader to an interactive login.",
+    tags: [
+      "Embedded Linux",
+      "Linux Kernel",
+      "Buildroot",
+      "ARM Architecture",
+      "Cross-compilation",
+      "Bootloaders",
+      "Low-Level Debugging",
+    ],
+  },
+  {
+    kind: "project",
+    slug: "frai-personal-agent",
+    href: "/projects/frai-personal-agent",
+    eyebrow: "AI SYSTEMS",
+    title: "FRAI — Friend AI",
+    description:
+      "A local-first personal AI agent that turns natural-language requests into real productivity actions through a modular, permissioned tool layer.",
+    tags: [
+      "AI Agents",
+      "Local LLMs",
+      "Python",
+      "Tool Orchestration",
+      "Modular Architecture",
+      "Human-Computer Interaction",
+    ],
+  },
+];
+
+export const impactStatEntries: ImpactStatEntry[] = [
+  { value: 9, label: "Process improvement projects delivered at Embraer in 3 months" },
+  { value: 23, prefix: "$", suffix: "k+", label: "Saved through contract-process automation" },
+  { value: 1500, suffix: "+", label: "Hackathon participants coordinated across 6 hubs" },
+  { value: 60, suffix: "+", label: "National teams outperformed to win the Harvard Brazil Hackathon" },
+  { value: 5571, label: "Brazilian municipalities analyzed in published AI research" },
+];
+
+export const languageEntries: LanguageEntry[] = [
+  {
+    language: "Portuguese",
+    level: "Native",
+    detail: "First language.",
+  },
+  {
+    language: "English",
+    level: "C1 — Cambridge Advanced",
+    detail: "Certified across reading, writing, listening, and speaking.",
+  },
+  {
+    language: "Spanish",
+    level: "Conversational (B1)",
+    detail: "Immersion exchange and coursework at CEPE Idiomas, Córdoba, Argentina.",
+  },
+  {
+    language: "Libras",
+    level: "Introductory",
+    detail: "28 hours of workshops on Brazilian Sign Language and inclusive communication at UNIFESP.",
+  },
+];
+
+export const leadershipEntries: LeadershipEntry[] = [
+  {
+    title: "English Teacher",
+    organization: "Interlinguando · UNIFESP",
+    timeframe: "Jun 2022 – Jul 2024",
+    summary:
+      "Volunteer English instructor for students across proficiency levels, designing lessons around real-life communication.",
+  },
+  {
+    title: "R&D Volunteer",
+    organization: "Enactus UNIFESP SJC",
+    timeframe: "2024",
+    summary:
+      "Supported research and prototype testing for social and environmental impact solutions.",
+  },
+  {
+    title: "Marketing & Communications Lead",
+    organization: "CodeBloco · UNIFESP",
+    timeframe: "Jun 2022 – May 2023",
+    summary:
+      "Ran the group's online presence and promotional materials, and helped organize university events.",
+  },
+  {
+    title: "Volleyball Player & Marketing Team",
+    organization: "AAAJA · UNIFESP Athletics",
+    timeframe: "Jun – Dec 2022",
+    summary:
+      "Competed in university tournaments while contributing to event marketing and student engagement.",
+  },
+  {
+    title: "Mentee — Acelerando Carreiras",
+    organization: "Instituto Joule & Instituto Embraer",
+    timeframe: "Oct – Dec 2023",
+    summary:
+      "Career-development mentorship with Embraer professionals, building a personal career plan and goal-tracking practice.",
   },
 ];
 
