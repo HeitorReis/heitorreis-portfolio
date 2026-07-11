@@ -33,7 +33,7 @@ export function SpotlightCard({
       ref={ref}
       onPointerMove={handlePointerMove}
       className={cn(
-        "spotlight-card surface-card group relative h-full overflow-hidden rounded-[28px] border border-line/70 p-5 transition-[transform,box-shadow,border-color] duration-300 ease-out hover:-translate-y-1 hover:border-accent/35 hover:shadow-[var(--shadow-lg)] md:p-7",
+        "spotlight-card surface-card group relative h-full overflow-hidden rounded-[28px] border border-line/70 p-5 transition-[transform,box-shadow,border-color] duration-300 ease-out hover:-translate-y-1 hover:border-accent/60 hover:shadow-[var(--shadow-glow)] md:p-7",
         className,
       )}
     >

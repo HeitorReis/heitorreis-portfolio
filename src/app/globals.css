@@ -217,11 +217,12 @@ select {
     z-index: 1;
     border-radius: inherit;
     opacity: 0;
-    transition: opacity 400ms ease;
+    transition: opacity 250ms ease;
     background: radial-gradient(
-      480px circle at var(--spotlight-x) var(--spotlight-y),
-      hsl(var(--accent) / 0.14),
-      transparent 62%
+      420px circle at var(--spotlight-x) var(--spotlight-y),
+      hsl(var(--accent) / 0.32),
+      hsl(var(--accent-2) / 0.12) 40%,
+      transparent 60%
     );
     pointer-events: none;
   }

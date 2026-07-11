@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Sparkles } from "lucide-react";
 
 import { SpotlightCard } from "@/components/motion/spotlight-card";
 import { MediaFrame } from "@/components/ui/media-frame";
@@ -13,6 +13,7 @@ interface FeaturedWorkCardProps {
   href: string;
   imagePath: string | null;
   tags?: string[];
+  impact?: string[];
   featured?: boolean;
 }
 
@@ -23,6 +24,7 @@ export function FeaturedWorkCard({
   href,
   imagePath,
   tags = [],
+  impact = [],
   featured = false,
 }: FeaturedWorkCardProps) {
   return (
@@ -30,7 +32,7 @@ export function FeaturedWorkCard({
       <MediaFrame
         src={imagePath}
         alt={title}
-        aspectClassName={featured ? "aspect-[16/9] lg:aspect-auto lg:h-48" : "aspect-[4/3]"}
+        aspectClassName={featured ? "aspect-[16/9] lg:aspect-auto lg:h-80" : "aspect-[4/3]"}
         imageClassName="transition duration-500 ease-out group-hover:scale-105"
       />
       <div className="flex flex-1 flex-col gap-3">
@@ -47,14 +49,35 @@ export function FeaturedWorkCard({
           >
             {title}
           </h3>
-          <p className="line-clamp-2 text-sm leading-7 text-muted">{summary}</p>
+          <p
+            className={cn(
+              "text-sm leading-7 text-muted",
+              featured ? "line-clamp-4" : "line-clamp-2",
+            )}
+          >
+            {summary}
+          </p>
         </div>
         {tags.length ? (
           <div className="flex flex-wrap gap-2">
-            {tags.slice(0, featured ? 4 : 3).map((tag) => (
+            {tags.slice(0, featured ? 5 : 3).map((tag) => (
               <Tag key={tag}>{tag}</Tag>
             ))}
           </div>
+        ) : null}
+        {featured && impact.length ? (
+          <ul className="space-y-2 border-t border-line/70 pt-3 text-sm leading-6 text-muted">
+            {impact.slice(0, 2).map((item) => (
+              <li key={item} className="flex gap-2">
+                <Sparkles
+                  size={14}
+                  className="mt-1 shrink-0 text-accent"
+                  aria-hidden="true"
+                />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
         ) : null}
         <Link
           href={href}

@@ -67,7 +67,7 @@ export function ContactSection() {
 
           return (
             <RevealItem key={item.label}>
-              <Magnetic strength={0.12} className="block h-full">
+              <Magnetic strength={0.2} className="block h-full">
                 <SpotlightCard
                   className="bg-surface-muted"
                   contentClassName="grid min-w-0 grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-4"

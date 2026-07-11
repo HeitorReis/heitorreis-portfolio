@@ -35,6 +35,10 @@ export function FeaturedWorkSection({
           (slug) => experienceBySlug.get(slug)?.imagePath ?? projectBySlug.get(slug)?.imagePath,
         )
         .find((value): value is string => Boolean(value)) ?? null;
+    const impact =
+      sourceSlugs
+        .map((slug) => experienceBySlug.get(slug)?.impact ?? projectBySlug.get(slug)?.impact)
+        .find((value): value is string[] => Boolean(value?.length)) ?? [];
 
     const hasMatchingSource = sourceSlugs.some(
       (slug) => experienceBySlug.has(slug) || projectBySlug.has(slug),
@@ -50,6 +54,7 @@ export function FeaturedWorkSection({
         href: entry.href,
         imagePath,
         tags: [...entry.tags],
+        impact,
       },
     ];
   });
