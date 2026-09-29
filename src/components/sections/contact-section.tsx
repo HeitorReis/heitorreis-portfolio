@@ -1,7 +1,7 @@
 import type { ComponentProps } from "react";
 
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Mail } from "lucide-react";
 
 import { AuroraBackground } from "@/components/motion/aurora-background";
 import { Magnetic } from "@/components/motion/magnetic";
@@ -39,6 +39,12 @@ function GitHubIcon(props: ComponentProps<"svg">) {
 export function ContactSection() {
   const socialItems = [
     {
+      label: "Email",
+      value: "tobiel.reis@gmail.com",
+      href: "mailto:tobiel.reis@gmail.com",
+      icon: Mail,
+    },
+    {
       label: "LinkedIn",
       value: "linkedin.com/in/heitor-gbr",
       href: "https://www.linkedin.com/in/heitor-gbr",
@@ -56,12 +62,12 @@ export function ContactSection() {
     <Section
       id="contact"
       eyebrow="Contact"
-      title="Find me on social media."
-      intro="This site no longer collects contact submissions. Reach out through the social profiles below."
+      title="Bring Heitor into the conversation."
+      intro="For internships, engineering roles, AI/product work, or collaborations, use the fastest channel below."
       className="relative overflow-hidden"
     >
       <AuroraBackground className="opacity-60" />
-      <RevealGroup className="relative grid gap-4 md:grid-cols-2" stagger={0.1}>
+      <RevealGroup className="relative grid gap-4 md:grid-cols-3" stagger={0.1}>
         {socialItems.map((item) => {
           const Icon = item.icon;
 

@@ -63,8 +63,8 @@ export function FeaturedWorkSection({
     <Section
       id="featured-work"
       eyebrow="Featured work"
-      title="Selected Work"
-      intro="A curated view of the projects and experiences that best represent Heitor’s range across business systems, AI, software, and low-level engineering."
+      title="Proof that Heitor turns range into outcomes."
+      intro="A recruiter-friendly view of the work that best shows business impact, product ownership, AI implementation, and low-level engineering depth."
       className="relative"
     >
       {items.length ? (

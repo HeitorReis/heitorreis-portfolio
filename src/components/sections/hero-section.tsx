@@ -23,7 +23,7 @@ export function HeroSection({ settings }: { settings: HomepageSettings }) {
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
                   <span className="relative inline-flex size-2 rounded-full bg-accent" />
                 </span>
-                Computer Engineering Student
+                Computer Engineering candidate with shipped impact
               </span>
             </Reveal>
 
@@ -46,7 +46,7 @@ export function HeroSection({ settings }: { settings: HomepageSettings }) {
                   href="#featured-work"
                   className="inline-flex h-12 items-center justify-center rounded-full bg-accent px-6 text-sm font-medium text-accent-fg shadow-[var(--shadow-sm)] transition hover:shadow-[var(--shadow-glow)]"
                 >
-                  See Selected Work
+                  See proof of work
                 </Link>
               </Magnetic>
               <Magnetic>
@@ -62,7 +62,7 @@ export function HeroSection({ settings }: { settings: HomepageSettings }) {
 
           <Reveal delay={0.5}>
             <p className="max-w-2xl text-sm leading-7 text-muted">
-              A multidisciplinary engineering profile, made easy to scan.
+              Built for recruiters and technical teams: outcomes first, details one click away.
             </p>
           </Reveal>
         </div>

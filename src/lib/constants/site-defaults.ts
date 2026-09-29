@@ -2,9 +2,9 @@ import type { HomepageSettings } from "@/types/domain";
 
 export const defaultHomepageSettings: HomepageSettings = {
   id: 1,
-  headline: "Heitor Reis",
+  headline: "Heitor Reis turns engineering range into business impact.",
   subheadline:
-    "Computer Engineering student building across AI, low-level systems, and digital health — from winning the Harvard Brazil Hackathon with a digital-health platform to shipping AI-driven tools inside Embraer's commercial and contracts teams.",
+    "Computer Engineering candidate building at the intersection of AI, business systems, healthtech, and low-level computing. Proven by Embraer automations that saved money, a Harvard Brazil Hackathon win, and product work that moves from prototype to measurable value.",
   heroImagePath: "hero-heitor-profile.jpg",
   showPhotoInHero: true,
   updatedAt: new Date(0).toISOString(),

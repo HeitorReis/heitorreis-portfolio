@@ -33,7 +33,7 @@ export function SiteHeader() {
         <Link href="/" className="flex flex-col">
           <span className="text-sm font-semibold tracking-[-0.02em]">Heitor Reis</span>
           <span className="text-[0.72rem] uppercase tracking-[0.14em] text-muted">
-            Computer Engineering Student
+            AI · Business Systems · Healthtech
           </span>
         </Link>
 

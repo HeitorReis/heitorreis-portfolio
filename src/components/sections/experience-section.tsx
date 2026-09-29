@@ -40,8 +40,8 @@ export function ExperienceSection({ experiences }: { experiences: Experience[] }
     <Section
       id="experience"
       eyebrow="Experience"
-      title="Experience that shows value in context."
-      intro="Experiences that show Heitor's ability to move between technical execution, structured problem-solving, and impact in real organizational contexts."
+      title="Experience translated into employer value."
+      intro="Each role is framed by contribution, focus, and why it mattered, so the signal is clear: Heitor can learn the system, improve the workflow, and communicate the result."
       actions={
         <Link
           href="/experience"

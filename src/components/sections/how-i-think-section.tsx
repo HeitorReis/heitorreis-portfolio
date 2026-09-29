@@ -9,17 +9,17 @@ const principles = [
     icon: Layers,
     label: "Systems thinking",
     description:
-      "I move between hardware, software, and product layers instead of staying in just one.",
+      "I can trace a problem across product, data, software, and hardware constraints.",
   },
   {
     icon: Users,
-    label: "Built for real use",
-    description: "Depth only matters if the person using it can actually act on it.",
+    label: "Useful by default",
+    description: "A solution is not done until the person using it can act faster or better.",
   },
   {
     icon: Target,
-    label: "Evidence over assumptions",
-    description: "I check what I build against real outcomes, not just a working demo.",
+    label: "Evidence over polish",
+    description: "I prefer measurable improvement over demos that only look complete.",
   },
 ];
 
@@ -28,16 +28,16 @@ export function HowIThinkSection() {
     <Section
       id="how-i-think"
       eyebrow="How I think"
-      title="Technical depth matters more when it stays useful."
-      intro="I'm drawn to problems that sit between technical depth and real-world use, across software, systems, AI, and digital health."
+      title="The operating system behind the candidate."
+      intro="The Heitor product is not one stack. It is a way of learning a context, identifying leverage, and shipping the smallest useful system that changes the result."
       className="relative"
     >
       <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
         <Reveal>
           <p className="reading-width text-xl leading-9 text-fg md:text-2xl md:leading-[1.6]">
-            What I try to bring isn&apos;t just technical range, but the ability to connect the
-            different layers of a problem clearly &mdash; from low-level systems to the applied
-            tools shaped by real users and real decisions.
+            What I bring is technical range with judgment: the ability to understand the layer
+            that matters, explain the tradeoff, and turn the work into something a team can use,
+            measure, and maintain.
           </p>
         </Reveal>
 

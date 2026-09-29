@@ -16,24 +16,24 @@ const ibmPlexMono = IBM_Plex_Mono({
 });
 
 const siteDescription =
-  "Portfolio of Heitor Reis, a Computer Engineering student working across AI, systems, research, and healthtech.";
+  "Portfolio of Heitor Reis, a Computer Engineering candidate turning AI, business systems, healthtech, and low-level engineering into measurable impact.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(env.publicSiteUrl || "http://localhost:3000"),
   title: {
-    default: "Heitor Reis | Computer Engineering Student",
+    default: "Heitor Reis | Engineering Impact Portfolio",
     template: "%s | Heitor Reis",
   },
   description: siteDescription,
   openGraph: {
     type: "website",
     siteName: "Heitor Reis",
-    title: "Heitor Reis | Computer Engineering Student",
+    title: "Heitor Reis | Engineering Impact Portfolio",
     description: siteDescription,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Heitor Reis | Computer Engineering Student",
+    title: "Heitor Reis | Engineering Impact Portfolio",
     description: siteDescription,
   },
   robots: env.siteIndexingEnabled

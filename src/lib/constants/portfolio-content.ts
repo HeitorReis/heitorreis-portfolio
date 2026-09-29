@@ -69,7 +69,7 @@ export const selectedWorkEntries: CuratedWorkEntry[] = [
     eyebrow: "EMBRAER",
     title: "Sales Digital Tools Intern",
     description:
-      "Builds Salesforce, analytics, and AI-driven solutions to support strategic sales processes, improve business visibility, optimize workflows, and strengthen executive-level decision-making.",
+      "Builds Salesforce, analytics, and AI workflows that make commercial execution easier to see, measure, and improve for strategic sales teams.",
     tags: [
       "Salesforce Administration",
       "Salesforce Development",
@@ -89,7 +89,7 @@ export const selectedWorkEntries: CuratedWorkEntry[] = [
     eyebrow: "EMBRAER",
     title: "Contracts Administration Intern",
     description:
-      "Transformed contract administration routines into structured, automated, and transparent processes through data analysis, dashboards, spreadsheet optimization, reporting, and workflow automation.",
+      "Converted manual contract-administration routines into dashboards, automations, and cleaner operating controls, producing measurable savings and faster reporting.",
     tags: [
       "Data Analysis",
       "Business Intelligence",
@@ -110,7 +110,7 @@ export const selectedWorkEntries: CuratedWorkEntry[] = [
     eyebrow: "EMMA",
     title: "Founder & Developer - Emma Digital Health",
     description:
-      "Leads the development of Emma, a mobile-first digital health platform focused on monitoring multiple sclerosis through AI, digital biomarkers, gamified engagement, and longitudinal patient interaction.",
+      "Leads a digital-health product from concept to implementation, connecting AI, digital biomarkers, patient engagement, and clinical-data reasoning.",
     tags: [
       "Flutter",
       "Dart",
@@ -132,7 +132,7 @@ export const selectedWorkEntries: CuratedWorkEntry[] = [
     eyebrow: "LOW-LEVEL SYSTEMS",
     title: "Compiler & ARM Processor Projects",
     description:
-      "A technical body of work that reflects Heitor's depth in low-level computing, spanning compiler construction, instruction flow, machine code generation, processor design, and hardware implementation in Verilog.",
+      "Shows technical depth below the product layer: compiler construction, instruction flow, machine-code generation, processor design, and Verilog implementation.",
     tags: [
       "Compiler Design",
       "Computer Architecture",
@@ -151,7 +151,7 @@ export const selectedWorkEntries: CuratedWorkEntry[] = [
     eyebrow: "EMBEDDED SYSTEMS",
     title: "Embedded Linux on Nintendo 3DS",
     description:
-      "A complete embedded Linux stack cross-compiled from source and booted on real Nintendo 3DS hardware, from kernel and bootloader to an interactive login.",
+      "A proof of systems persistence: Linux cross-compiled from source and booted on real ARM handheld hardware, from kernel and bootloader to login.",
     tags: [
       "Embedded Linux",
       "Linux Kernel",
@@ -169,7 +169,7 @@ export const selectedWorkEntries: CuratedWorkEntry[] = [
     eyebrow: "AI SYSTEMS",
     title: "FRAI — Friend AI",
     description:
-      "A local-first personal AI agent that turns natural-language requests into real productivity actions through a modular, permissioned tool layer.",
+      "A local-first agent architecture that turns natural-language requests into productivity actions through modular tools, permissions, and clear execution boundaries.",
     tags: [
       "AI Agents",
       "Local LLMs",
@@ -182,11 +182,11 @@ export const selectedWorkEntries: CuratedWorkEntry[] = [
 ];
 
 export const impactStatEntries: ImpactStatEntry[] = [
-  { value: 9, label: "Process improvement projects delivered at Embraer in 3 months" },
+  { value: 9, label: "Process improvements shipped at Embraer in 3 months" },
   { value: 23, prefix: "$", suffix: "k+", label: "Saved through contract-process automation" },
   { value: 1500, suffix: "+", label: "Hackathon participants coordinated across 6 hubs" },
-  { value: 60, suffix: "+", label: "National teams outperformed to win the Harvard Brazil Hackathon" },
-  { value: 5571, label: "Brazilian municipalities analyzed in published AI research" },
+  { value: 60, suffix: "+", label: "National teams outperformed to win Harvard Brazil Hackathon" },
+  { value: 5571, label: "Brazilian municipalities analyzed in AI research" },
 ];
 
 export const languageEntries: LanguageEntry[] = [
