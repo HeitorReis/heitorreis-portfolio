@@ -1017,6 +1017,17 @@ function sortByFeatureRank<T extends { featureRank: number | null }>(
   );
 }
 
+function sortMilestonesOldestFirst(items: Milestone[]) {
+  return [...items].sort((left, right) => {
+    const dateComparison =
+      new Date(left.startDate).getTime() - new Date(right.startDate).getTime();
+
+    if (dateComparison !== 0) return dateComparison;
+
+    return left.sortOrder - right.sortOrder;
+  });
+}
+
 export const getHomepagePayload = cache(
   async (): Promise<HomepagePayload> => ({
     settings: defaultHomepageSettings,
@@ -1026,9 +1037,7 @@ export const getHomepagePayload = cache(
     featuredProjects: sortByFeatureRank(
       projects.filter((entry) => entry.isFeatured),
     ),
-    milestones: [...milestones].sort(
-      (left, right) => left.sortOrder - right.sortOrder,
-    ),
+    milestones: sortMilestonesOldestFirst(milestones),
     latestPosts: posts
       .filter((entry) => entry.isPublished)
       .sort((left, right) => left.sortOrder - right.sortOrder),
@@ -1040,9 +1049,7 @@ export const getExperienceSummaryData = cache(async () => ({
     experiences.filter((entry) => entry.isPublished),
   ),
   projects: sortByFeatureRank(projects.filter((entry) => entry.isPublished)),
-  milestones: [...milestones].sort(
-    (left, right) => left.sortOrder - right.sortOrder,
-  ),
+  milestones: sortMilestonesOldestFirst(milestones),
 }));
 
 export const getExperienceBySlug = cache(async (slug: string) => {
